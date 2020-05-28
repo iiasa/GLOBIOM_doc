@@ -1,11 +1,14 @@
 GLOBIOM_FABLE
 =============
 
+.. image:: images/logo.png
+   :width: 154
+
 This website provides FABLE consortium members using GLOBIOM for partial
 equilibrium modeling with documentation, links to code repositories,
 a graphical user interface, and training presentations.
 
-About GLOBIOM 
+About GLOBIOM
 -------------
 
 The `Global Biosphere Management Model <http://www.globiom.org>`_ (GLOBIOM) has been developed
@@ -15,16 +18,16 @@ agriculture, forestry and bioenergy sectors. The model is built following a bott
 setting based on detailed grid-cell information, providing the biophysical and technical
 cost information. This detailed structure allows a rich set of environmental parameters to
 be taken into account. Its spatial equilibrium modeling approach represents bilateral
-trade based on cost competitiveness. The model was initially developed for impact 
+trade based on cost competitiveness. The model was initially developed for impact
 assessment of climate change mitigation policies in land-based sectors,
-including biofuels, and nowadays is also increasingly being implemented for agricultural 
+including biofuels, and nowadays is also increasingly being implemented for agricultural
 and timber markets foresight, and economic impact analysis of climate change and adaptation,
 and a wide range of sustainable development goals.
 
 GLOBIOM Documentation
 ---------------------
 The `model documentation <GLOBIOM_Documentation_20180604.pdf>`_ provides a detailed description
-of the main features of the GLOBIOM model, as present in the standard global version. 
+of the main features of the GLOBIOM model, as present in the standard global version.
 
 FABLE Training Presentations
 ----------------------------
