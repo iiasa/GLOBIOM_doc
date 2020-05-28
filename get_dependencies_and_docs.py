@@ -6,7 +6,7 @@ whitelist of manually executed GAMS scripts. Report any problems encountered
 and, for each GAMS script in this dependency tree, generate a reStructuredText
 file containing dependency links as well as any ***-delimited reStructuredText
 doc-comments in the script. The reStructuredText text files can subsequently be
-fed to Sphinx to generate a variety document formats.
+fed to Sphinx to generate a variety of document formats.
 
 When a GAMS script starts with with *** delimited reStructuredText comment,
 this first comment is output as a header before any dependency links. This
