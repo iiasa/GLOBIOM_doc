@@ -1,0 +1,30 @@
+The reference file consists of two sections: The information about the code
+compiled and the information about the symbols in the GAMS program
+(aka symbol table). The information about the code compiled consists of
+records with 11 fields. The meaning of the fields is:
+
+- record count
+- symbol index
+- symbol name
+- symbol type
+- reference type (available: declared, defined, impl-asn, assigned, ref, control)
+- global listing line
+- local line
+- local column position (due to macros this many not be always 100% correct)
+- include nesting level
+- index in the file summary
+- file name
+
+The symbol table starts with the line that is indicated by a 0 in the first
+field, followed by the number of records in this symbol table and the text
+"size of symboltable". The records for the symbol table consists of:
+
+- internal symbol index
+- symbol name
+- numerical and string symbol type
+- dimension (0 for functions and models)
+- cardinality (0 for functions, card(sym) for regular symbols, and number
+  of equation symbols for models) 
+- a list of length dimension with the internal symbol index of the domain
+  set (0 if universe)
+- the symbol text
