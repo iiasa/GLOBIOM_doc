@@ -1,0 +1,198 @@
+---
+title: "Reference file parse trial"
+output: html_notebook
+---
+
+Experiments for parsing reference files.
+
+Load the tidyverse and set the reference file name.
+
+```{r}
+library(tidyverse, quietly = TRUE)
+ref <- "combined.ref"
+```
+
+The reference file consists of two sections: The information about the code
+compiled and the information about the symbols in the GAMS program
+(aka symbol table). The information about the code compiled consists of
+records with 11 fields. The meaning of the fields is:
+
+- record count
+- symbol index
+- symbol name
+- symbol type
+- reference type (available: declared, defined, impl-asn, assigned, ref, control)
+- global listing line
+- local line
+- local column position (due to macros this many not be always 100% correct)
+- include nesting level
+- index in the file summary
+- file name
+
+```{r}
+code <- read_delim(ref,
+                   delim = " ",
+                   col_names = c("record_count",
+                                 "symbol_index",
+                                 "symbol_name",
+                                 "symbol_type",
+                                 "reference_type",
+                                 "global_listing_line",
+                                 "local_line",
+                                 "local_column_position",
+                                 "include_nesting_level",
+                                 "index_in_the_file_summary",
+                                 "file_name")
+             ) %>%
+filter(symbol_type != 'FUNCT') %>%
+filter(symbol_type %in% c('SETS', 'PARAMETERS'))
+View(code)
+```
+
+The symbol table starts with the line that is indicated by a 0 in the first
+field, followed by the number of records in this symbol table and the text
+"size of symboltable".
+
+```{r}
+header <- read_delim(ref,
+                skip = nrow(code),
+                n_max = 1,
+                delim = " ",
+                col_names = c("zero",
+                              "symbols",
+                              "description")
+               ) %>%
+filter(zero == '0')
+View(header)
+```
+
+The records for the symbol table consists of:
+
+- internal symbol index
+- symbol name
+- numerical and string symbol type
+- dimension (0 for functions and models)
+- cardinality (0 for functions, card(sym) for regular symbols, and number of equation symbols for models) 
+- a list of length dimension with the internal symbol index of the domain set (0 if universe)
+- the symbol text
+
+```{r}
+symbol <- read_delim(ref,
+                     skip = nrow(code)+nrow(header),
+                     delim = " ",
+                     col_names = c("internal_symbol_index",
+                                   "symbol_name",
+                                   "symbol_type_code",
+                                   "symbol_type",
+                                   "dim",
+                                   "cardinality",
+                                   "dim1",
+                                   "dim2",
+                                   "dim3",
+                                   "dim4",
+                                   "dim5",
+                                   "dim6",
+                                   "dim7",
+                                   "dim8",
+                                   "dim9"
+                                  )
+                    ) %>%
+filter(symbol_type != 'FUNCT') %>%
+filter(symbol_type != 'PRED')
+View(symbol)
+```
+Switch to Python and import some useful packages.
+```{python}
+import pandas
+import re
+import sys
+print(f"The python version is {sys.version}")
+```
+Define categories and capturing regular expressions for parsing.
+```{python}
+code_fields = [
+  {'name': 'record_count',              'capture': '\\d+'},
+  {'name': 'symbol_index',              'capture': '\\d+'},
+  {'name': 'symbol_name',               'capture': '[^\\s]+'},
+  {'name': 'symbol_type',               'capture': '[^\\s]+'},
+  {'name': 'reference_type',            'capture': '[^\\s]+'},
+  {'name': 'global_listing_line',       'capture': '\\d+'},
+  {'name': 'local_line',                'capture': '\\d+'},
+  {'name': 'local_column_position',     'capture': '\\d+'},
+  {'name': 'include_nesting_level',     'capture': '\\d+'},
+  {'name': 'index_in_the_file_summary', 'capture': '\\d+'},
+  {'name': 'file_name',                 'capture': '.*'}
+]
+code_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in code_fields]) + ")$")
+header_fields = [
+  {'name': 'zero',        'capture': '\\d+'},
+  {'name': 'symbols',     'capture': '\\d+'},
+  {'name': 'description', 'capture': 'size of symboltable'}
+]
+header_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in header_fields]) + ")$")
+symbol_fields = [
+  {'name': 'internal_index', 'capture': '\\d+'},
+  {'name': 'name',           'capture': '[^\\s]+'},
+  {'name': 'type_code',      'capture': '\\d+'},
+  {'name': 'type',           'capture': '[^\\s]+'},
+  {'name': 'dim',            'capture': '\\d+'},
+  {'name': 'cardinality',    'capture': '\\d+'},
+  {'name': 'remainder',      'capture': '.*'}
+]
+symbol_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in symbol_fields]) + ")$")
+```
+
+Parse the reference fie, code references first, then the header and body of the symbol table
+
+```{python}
+filepath = 'combined.ref'
+with open(filepath) as fp:
+  # Parse the code references
+  code_refs = []
+  while True:
+    # Read code reference record line and match fields
+    line = fp.readline()
+    ma = code_regex.match(line)
+    if (ma is None):
+      break
+    # Store the matched fields in a record dictionary
+    record = {r['name']:ma[i+1] for i,r in enumerate(code_fields)}
+    # Convert integer fields in record to int
+    for f in code_fields:
+      if f['capture'] == '\\d+':
+        record[f['name']] = int(record[f['name']])
+    # Append record to list
+    code_refs.append(record)
+  print(f"Parsed {len(code_refs)} code reference records")
+
+  # Parse the symbol table header in the same manner
+  ma = header_regex.match(line)
+  if (ma is None):
+    raise RuntimeError(f"Could not match header field! Regexp {header_regex} did not match line '{line}'")
+  header = {r['name']:ma[i+1] for i,r in enumerate(header_fields)}
+  for f in header_fields:
+    if f['capture'] == '\\d+':
+      header[f['name']] = int(header[f['name']])
+  print(f"Parsed symbol table header: {header}")
+
+  # Parse the symbol table
+  symbols = []
+  while True:
+    # Read symbol records line and match fields
+    line = fp.readline()
+    ma = symbol_regex.match(line)
+    if (ma is None):
+      break
+    # Store the matched fields in a record dictionary
+    record = {r['name']:ma[i+1] for i,r in enumerate(symbol_fields)}
+    # Convert integer fields in record to int
+    for f in symbol_fields:
+      if f['capture'] == '\\d+':
+        record[f['name']] = int(record[f['name']])
+    # Append record to list
+    symbols.append(record)
+  print(f"Parsed {len(symbols)} symbol records")
+  assert len(symbols) == header['symbols']
+  print(symbols)
+```
+
