@@ -1,0 +1,6 @@
+
+*.ref
+*.html
+*.lst
+.Rhistory
+.Rproj.user
