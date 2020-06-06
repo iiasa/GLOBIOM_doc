@@ -108,6 +108,25 @@ import re
 import sys
 print(f"The python version is {sys.version}")
 ```
+Define regular expression based fields-from-line parsing function
+```{python}
+def parse(line, fields):
+  # Use the first field dictionary to cache the compiled regular expression
+  if 'regex' not in fields[0]:
+    # Construct the regular expression from the field captures once only
+    fields[0]['regex'] = re.compile("(" + ")\\s+(".join([f['capture'] for f in fields]) + ")$")
+  ma = fields[0]['regex'].match(line)
+  if (ma is None):
+    return None
+  # Store the matched fields in a record dictionary
+  record = {r['name']:ma[i+1] for i,r in enumerate(fields)}
+  # Convert integer fields in record to int
+  for f in fields:
+    if f['capture'] == '\\d+':
+      record[f['name']] = int(record[f['name']])
+  return record
+```
+
 Define categories and capturing regular expressions for parsing.
 ```{python}
 code_fields = [
@@ -123,13 +142,11 @@ code_fields = [
   {'name': 'index_in_the_file_summary', 'capture': '\\d+'},
   {'name': 'file_name',                 'capture': '.*'}
 ]
-code_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in code_fields]) + ")$")
 header_fields = [
   {'name': 'zero',        'capture': '\\d+'},
   {'name': 'symbols',     'capture': '\\d+'},
   {'name': 'description', 'capture': 'size of symboltable'}
 ]
-header_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in header_fields]) + ")$")
 symbol_fields = [
   {'name': 'internal_index', 'capture': '\\d+'},
   {'name': 'name',           'capture': '[^\\s]+'},
@@ -139,7 +156,6 @@ symbol_fields = [
   {'name': 'cardinality',    'capture': '\\d+'},
   {'name': 'remainder',      'capture': '.*'}
 ]
-symbol_regex = re.compile("(" + ")\\s+(".join([f['capture'] for f in symbol_fields]) + ")$")
 ```
 
 Parse the reference fie, code references first, then the header and body of the symbol table
@@ -152,27 +168,17 @@ with open(filepath) as fp:
   while True:
     # Read code reference record line and match fields
     line = fp.readline()
-    ma = code_regex.match(line)
-    if (ma is None):
+    code = parse(line, code_fields)
+    if (code is None):
       break
-    # Store the matched fields in a record dictionary
-    record = {r['name']:ma[i+1] for i,r in enumerate(code_fields)}
-    # Convert integer fields in record to int
-    for f in code_fields:
-      if f['capture'] == '\\d+':
-        record[f['name']] = int(record[f['name']])
-    # Append record to list
-    code_refs.append(record)
+    code_refs.append(code)
   print(f"Parsed {len(code_refs)} code reference records")
+  print(code_refs)
 
   # Parse the symbol table header in the same manner
-  ma = header_regex.match(line)
-  if (ma is None):
+  header = parse(line, header_fields)
+  if (header is None):
     raise RuntimeError(f"Could not match header field! Regexp {header_regex} did not match line '{line}'")
-  header = {r['name']:ma[i+1] for i,r in enumerate(header_fields)}
-  for f in header_fields:
-    if f['capture'] == '\\d+':
-      header[f['name']] = int(header[f['name']])
   print(f"Parsed symbol table header: {header}")
 
   # Parse the symbol table
@@ -180,17 +186,10 @@ with open(filepath) as fp:
   while True:
     # Read symbol records line and match fields
     line = fp.readline()
-    ma = symbol_regex.match(line)
-    if (ma is None):
+    symbol = parse(line, symbol_fields)
+    if (symbol is None):
       break
-    # Store the matched fields in a record dictionary
-    record = {r['name']:ma[i+1] for i,r in enumerate(symbol_fields)}
-    # Convert integer fields in record to int
-    for f in symbol_fields:
-      if f['capture'] == '\\d+':
-        record[f['name']] = int(record[f['name']])
-    # Append record to list
-    symbols.append(record)
+    symbols.append(symbol)
   print(f"Parsed {len(symbols)} symbol records")
   assert len(symbols) == header['symbols']
   print(symbols)
