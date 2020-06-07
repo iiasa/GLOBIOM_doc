@@ -173,7 +173,6 @@ with open(filepath) as fp:
       break
     code_refs.append(code)
   print(f"Parsed {len(code_refs)} code reference records")
-  print(code_refs)
 
   # Parse the symbol table header in the same manner
   header = parse(line, header_fields)
@@ -192,6 +191,25 @@ with open(filepath) as fp:
     symbols.append(symbol)
   print(f"Parsed {len(symbols)} symbol records")
   assert len(symbols) == header['symbols']
-  print(symbols)
+
+  # Parse the remainder of the symbol records
+  remainder_regexes = {}
+  for s in symbols:
+    if s['dim'] == 0:
+      s['domain_sets'] = []
+      s['description'] = s['remainder']
+    else:
+      if s['dim'] not in remainder_regexes:
+        remainder_regexes[s['dim']] = re.compile("\\s+".join(["(\\d+)"]*s['dim']) + "\\s+(.*)$")
+      ma = remainder_regexes[s['dim']].match(s['remainder'])
+      assert ma is not None
+      ma_list = [ma[i] for i in range(1, s['dim']+1)]
+      s['domain_sets'] = [int(m) for m in ma_list[:-1]]
+      s['description'] = ma_list[-1]
+      print(s)
+    s['remainder'] = None
+
+print(code)
+print(symbols)
 ```
 
