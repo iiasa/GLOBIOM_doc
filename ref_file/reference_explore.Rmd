@@ -160,7 +160,8 @@ symbol_fields = [
 ```
 Parse the reference fie, code references first, then the header and body of the symbol table
 ```{python}
-filepath = 'combined.ref'
+#filepath = 'combined.ref'
+filepath = '../../Trunk_build_artifacts/Model/4_model.ref'
 with open(filepath) as fp:
   # Parse the code references
   code_refs = []
@@ -228,16 +229,34 @@ for s in symbols:
       if d >= 0:
         assert symbols[d]['type'] == 'SET'
 ```
-Display the code references
+Show unique type values
 ```{python}
+print("Code references 'reference_type':", set([c['reference_type'] for c in code_refs]))
+print("Code references 'symbol_type':", set([c['symbol_type'] for c in code_refs]))
+print("Symbols 'type':", set([s['type'] for s in symbols]))
+```
+Display the code references of a particular type
+```{python}
+shown = 0
 for i,c in enumerate(code_refs):
-  print(i)
-  pprint(c)
+  if c['reference_type'] == 'assigned':
+    print(i)
+    pprint(c)
+    shown += 1
+    if shown >= 30:
+      print("Show limit reached!")
+      break
 ```
 Display the symbol table
 ```{python}
+shown = 0
 for i,s in enumerate(symbols):
-  print(i)
-  pprint(s)
+  if s['type'] == 'PARAM':
+    print(i)
+    pprint(s)
+    shown += 1
+    if shown >= 40:
+      print("Show limit reached!")
+      break
 ```
 
