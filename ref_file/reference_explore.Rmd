@@ -190,19 +190,17 @@ with open(filepath) as fp:
     line = fp.readline()
     symbol = parse(line, symbol_fields)
     if (symbol is None):
-      print(line, len(symbols), header, flush=True)
       break
     symbols.append(symbol)
     assert symbol['internal_index'] == len(symbols) # verify that list indexing (0-based) can be used instead
-    del symbol['internal_index'] # drop 1-based from-file index
   assert len(symbols) == header['symbols']
+  print(f"Parsed {len(symbols)} symbol records")
 ```
 The remaining part of the symbol records has a variable number of fields, parse these bits separately.
 ```{python}
 remainder_regexes = {}
 for s in symbols:
   if s['dim'] == 0:
-    s['domain_sets'] = []
     s['description'] = s['remainder']
   else:
     if s['dim'] not in remainder_regexes:
@@ -212,14 +210,23 @@ for s in symbols:
     ma_list = [ma[i] for i in range(1, s['dim']+2)]
     s['domain_sets'] = [int(m)-1 for m in ma_list[:-1]] # convert 1-based index to 0-based, with -1 == *
     s['description'] = ma_list[-1]
-  del s['remainder']
+```
+Remove superfluous fields from the symbol dictionaries
+```{python}
+for s in symbols:
+  del s['remainder'] # parsed to domain_sets and description
+  del s['dim'] # implied by presence and length of domain_sets
+  if s['description'] == "":
+    del s['description'] # description absent, drop field
+  del s['internal_index'] # implied by symbols list index
 ```
 Verify that domain set indexes reference sets
 ```{python}
 for s in symbols:
-  for d in s['domain_sets']:
-    if d >= 0:
-      assert symbols[d]['type'] == 'SET'
+  if 'domain_sets' in s:
+    for d in s['domain_sets']:
+      if d >= 0:
+        assert symbols[d]['type'] == 'SET'
 ```
 Display the code references
 ```{python}
