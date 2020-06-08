@@ -214,6 +214,12 @@ with open(filepath) as fp:
       s['description'] = ma_list[-1]
     del s['remainder']
 
+  # Verify that domain set indexes reference sets
+  for s in symbols:
+    for d in s['domain_sets']:
+      if d >= 0:
+        assert symbols[d]['type'] == 'SET'
+
 print("Code references:")
 print(code_refs)
 
