@@ -104,6 +104,7 @@ View(symbol)
 Switch to Python and import some useful packages.
 ```{python}
 import pandas
+from pprint import pprint
 import re
 import sys
 print(f"The python version is {sys.version}")
@@ -157,9 +158,7 @@ symbol_fields = [
   {'name': 'remainder',      'capture': '.*'}
 ]
 ```
-
 Parse the reference fie, code references first, then the header and body of the symbol table
-
 ```{python}
 filepath = 'combined.ref'
 with open(filepath) as fp:
@@ -197,33 +196,41 @@ with open(filepath) as fp:
     assert symbol['internal_index'] == len(symbols) # verify that list indexing (0-based) can be used instead
     del symbol['internal_index'] # drop 1-based from-file index
   assert len(symbols) == header['symbols']
-
-  # Parse the remainder of the symbol records
-  remainder_regexes = {}
-  for s in symbols:
-    if s['dim'] == 0:
-      s['domain_sets'] = []
-      s['description'] = s['remainder']
-    else:
-      if s['dim'] not in remainder_regexes:
-        remainder_regexes[s['dim']] = re.compile("\\s+".join(["(\\d+)"]*s['dim']) + "\\s+(.*)$")
-      ma = remainder_regexes[s['dim']].match(s['remainder'])
-      assert ma is not None
-      ma_list = [ma[i] for i in range(1, s['dim']+2)]
-      s['domain_sets'] = [int(m)-1 for m in ma_list[:-1]] # convert 1-based index to 0-based, with -1 == *
-      s['description'] = ma_list[-1]
-    del s['remainder']
-
-  # Verify that domain set indexes reference sets
-  for s in symbols:
-    for d in s['domain_sets']:
-      if d >= 0:
-        assert symbols[d]['type'] == 'SET'
-
-print("Code references:")
-print(code_refs)
-
-print("Symbol table:")
-print(symbols)
+```
+The remaining part of the symbol records has a variable number of fields, parse these bits separately.
+```{python}
+remainder_regexes = {}
+for s in symbols:
+  if s['dim'] == 0:
+    s['domain_sets'] = []
+    s['description'] = s['remainder']
+  else:
+    if s['dim'] not in remainder_regexes:
+      remainder_regexes[s['dim']] = re.compile("\\s+".join(["(\\d+)"]*s['dim']) + "\\s+(.*)$")
+    ma = remainder_regexes[s['dim']].match(s['remainder'])
+    assert ma is not None
+    ma_list = [ma[i] for i in range(1, s['dim']+2)]
+    s['domain_sets'] = [int(m)-1 for m in ma_list[:-1]] # convert 1-based index to 0-based, with -1 == *
+    s['description'] = ma_list[-1]
+  del s['remainder']
+```
+Verify that domain set indexes reference sets
+```{python}
+for s in symbols:
+  for d in s['domain_sets']:
+    if d >= 0:
+      assert symbols[d]['type'] == 'SET'
+```
+Display the code references
+```{python}
+for i,c in enumerate(code_refs):
+  print(i)
+  pprint(c)
+```
+Display the symbol table
+```{python}
+for i,s in enumerate(symbols):
+  print(i)
+  pprint(s)
 ```
 
