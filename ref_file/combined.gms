@@ -1,10 +1,10 @@
-Set c "country names"
+Set c(*) "country names"
     / Colombia
       Brazil
       Mexico
       Argentina /;
 
-Set cty "large cities"
+Set cty(*) "large cities"
     / "Sao Paolo"
       Guadalajara
       "Mexico City"

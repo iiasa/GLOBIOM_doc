@@ -172,6 +172,10 @@ with open(filepath) as fp:
     if (code is None):
       break
     code_refs.append(code)
+    assert code['record_count'] == len(code_refs) # verify that record count is sequential and hence implied by list index
+    del code['record_count'] # drop superfluous count
+    assert code['symbol_index'] > 0 # verify that the symbol index makes sense
+    code['symbol_index'] -= 1 # convert 1-based index to 0-based
   print(f"Parsed {len(code_refs)} code reference records")
 
   # Parse the symbol table header in the same manner
@@ -187,9 +191,11 @@ with open(filepath) as fp:
     line = fp.readline()
     symbol = parse(line, symbol_fields)
     if (symbol is None):
+      print(line, len(symbols), header, flush=True)
       break
     symbols.append(symbol)
-  print(f"Parsed {len(symbols)} symbol records")
+    assert symbol['internal_index'] == len(symbols) # verify that list indexing (0-based) can be used instead
+    del symbol['internal_index'] # drop 1-based from-file index
   assert len(symbols) == header['symbols']
 
   # Parse the remainder of the symbol records
@@ -204,11 +210,14 @@ with open(filepath) as fp:
       ma = remainder_regexes[s['dim']].match(s['remainder'])
       assert ma is not None
       ma_list = [ma[i] for i in range(1, s['dim']+2)]
-      s['domain_sets'] = [int(m) for m in ma_list[:-1]]
+      s['domain_sets'] = [int(m)-1 for m in ma_list[:-1]] # convert 1-based index to 0-based, with -1 == *
       s['description'] = ma_list[-1]
-    s['remainder'] = None
+    del s['remainder']
 
-print(code)
+print("Code references:")
+print(code_refs)
+
+print("Symbol table:")
 print(symbols)
 ```
 
