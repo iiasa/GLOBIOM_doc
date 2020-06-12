@@ -71,7 +71,7 @@ FABLE
 FABLE consortium members using GLOBIOM for partial equilibrium modeling have been provided with
 code repositories, documentation, a graphical user interface, and training presentations. These
 are all described and linked on a separate `GLOBIOM FABLE website
-<https://iiasa.github.io/GLOBIOM_FABLE>_`.
+<https://iiasa.github.io/GLOBIOM_FABLE>`_.
 
 Top-Level GAMS Scripts
 ----------------------
