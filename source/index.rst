@@ -60,8 +60,8 @@ for GLOBIOM development with an IIASA-specific focus. The GitHub `issue tracker
 members. These links work if you are signed in to GitHub and are a member of the
 ``iiasa/GLOBIOM`` GitHub team, or have been given collaborator access.
 
-External collaborators
-^^^^^^^^^^^^^^^^^^^^^^
+Model code
+^^^^^^^^^^
 An Open Source version of GLOBIOM is under preparation. External collaborators are given access
 to an open-source pre-release version of GLOBIOM hosted on GitHub in `this repository
 <https://github.com/iiasa/GLOBIOM_Prerelease_Model>`_.
