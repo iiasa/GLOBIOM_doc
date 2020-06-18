@@ -98,7 +98,12 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
+html_sidebars = {
+   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+   'R': ['localtoc.html', 'searchbox.html'],
+   'GUI': ['localtoc.html', 'searchbox.html'],
+   'index': ['localtoc.html', 'searchbox.html'],
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
