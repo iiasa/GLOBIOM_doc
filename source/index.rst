@@ -1,7 +1,7 @@
 GLOBIOM 
 =======
 
-.. image:: images/logo.png
+.. image:: _images/logo.png
    :width: 154
    
 This site provides documentation for the GLOBIOM model, links to GLOBIOM resources, and
