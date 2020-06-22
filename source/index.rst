@@ -119,8 +119,3 @@ Index and Search
 ----------------
 
 * :ref:`search`
-
-Acknowledgement
----------------
-
-This documentation was generated using the `GAMS stub project on Github <https://github.com/iiasa/gams_stub>`_.
