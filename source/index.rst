@@ -1,14 +1,14 @@
-GLOBIOM 
+GLOBIOM
 =======
 
 .. image:: _images/logo.png
    :width: 154
-   
+
 This site provides documentation for the GLOBIOM model, links to GLOBIOM resources, and
 helps you find your way in the model's GAMS code. GAMS script descriptions and dependency
 links that match the Trunk version of the GLOBIOM model are provided.
 
-About GLOBIOM 
+About GLOBIOM
 -------------
 
 The `Global Biosphere Management Model <http://www.globiom.org>`_ (GLOBIOM) has been developed
@@ -18,11 +18,31 @@ agriculture, forestry and bioenergy sectors. The model is built following a bott
 setting based on detailed grid-cell information, providing the biophysical and technical
 cost information. This detailed structure allows a rich set of environmental parameters to
 be taken into account. Its spatial equilibrium modelling approach represents bilateral
-trade based on cost competitiveness. The model was initially developed for impact 
+trade based on cost competitiveness. The model was initially developed for impact
 assessment of climate change mitigation policies in land-based sectors,
-including biofuels, and nowadays is also increasingly being implemented for agricultural 
+including biofuels, and nowadays is also increasingly being implemented for agricultural
 and timber markets foresight, and economic impact analysis of climate change and adaptation,
 and a wide range of sustainable development goals.
+
+How GLOBIOM works
+-----------------
+GLOBIOM's analytical process captures the multiple interrelationships between the different
+systems involved in provision of agricultural and forestry products, for example, population
+dynamics, ecosystems, technology, and climate.
+
+GLOBIOM is a global, recursively dynamic, and partial equilibrium model. It integrates the
+agricultural, bioenergy, and forestry sectors and draws on comprehensive socioeconomic and
+geospatial data.  It accounts for the 18 most globally important crops, a range of livestock
+production activities, forestry commodities, first- and second-generation bioenergy, and
+water. Production is spatially explicit and takes into account land, management, and weather
+characteristics.
+
+The market equilibrium is solved by maximizing the sum of producer and consumer surplus
+subject to resource, technological, and political constraints. Using the year 2000 as the
+baseline, GLOBIOM simulates demand and supply quantities, bilateral trade flows, and prices
+for commodities and natural resources at 10-year-step intervals up to 2050. This gives
+planners a basis for setting future land use and, more importantly, for identifying possible
+shortfalls in food and biomass supplies.
 
 Model documentation
 -------------------
