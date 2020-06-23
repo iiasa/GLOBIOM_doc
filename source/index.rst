@@ -37,8 +37,7 @@ production activities, forestry commodities, first- and second-generation bioene
 water. Production is spatially explicit and takes into account land, management, and weather
 characteristics.
 
-.. image:: _images/sectors.jpg
-   :width: 600
+.. image:: _images/sectors.svg
 
 The market equilibrium is solved by maximizing the sum of producer and consumer surplus
 subject to resource, technological, and political constraints. Using the year 2000 as the
