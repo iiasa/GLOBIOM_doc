@@ -116,8 +116,3 @@ Important GAMS Scripts
    Model/6_scenarios_limpopo
    Model/6_scenarios_msg_limpopo
    Model/7_output
-
-Index and Search
-----------------
-
-* :ref:`search`
