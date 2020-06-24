@@ -4,7 +4,7 @@ The `GLOBIOM_GUI repository <https://github.com/iiasa/GLOBIOM_GUI>`_ provides a 
 interface (GUI) for running GLOBIOM and analyzing results. Installation instructions are found
 `here <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_.
 
-The GUI provides a user-friendly way to run GLOBIOM and perform interactive
+The GUI offers a user-friendly way to run GLOBIOM and perform interactive
 analysis of the model output. One or more output GDX files resulting from
 GLOBIOM scenario runs can be loaded for charting, mapping, tabulation and
 comparison.
