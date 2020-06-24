@@ -77,20 +77,6 @@ interface (GUI) for running GLOBIOM and analyzing results. Installation instruct
 `here <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_.
 See the :doc:`GUI` to learn how to use the GUI.
 
-R
-^
-In addition to GAMS, GLOBIOM includes scripts written in the Open Source R language.
-How to install and configure R for GLOBIOM is explained on `this R page <R>`_. In
-addition, R packages and examples for analysis and preperation of GLOBIOM data are
-available on GitHub:
-
-* `globiomvis <https://iiasa.github.io/globiomvis>`_, an R package and examples for
-  visualizing GLOBIOM data.
-
-* `mapspam2globiom <https://iiasa.github.io/mapspam2globiom>`_, an R package and examples
-  to facilitate the creation of country level crop distribution maps that are input to
-  GLOBIOM.
-
 Top-Level GAMS Scripts
 ----------------------
 
