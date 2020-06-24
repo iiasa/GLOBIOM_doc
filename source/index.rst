@@ -54,6 +54,9 @@ standard global version.
 
 Model code
 ----------
+See the :doc:`source_tree` to learn how the GLOBIOM code is structured, and what the various
+code files do. 
+
 An Open Source version of GLOBIOM is under preparation. External collaborators are given access
 to an open-source pre-release version of GLOBIOM hosted on GitHub in `this repository
 <https://github.com/iiasa/GLOBIOM_Prerelease_Model>`_.
@@ -66,29 +69,3 @@ for GLOBIOM development with an IIASA-specific focus. The GitHub `issue tracker
 <https://github.com/iiasa/GLOBIOM/projects>`_ support collaborative development for team
 members. These links work if you are signed in to GitHub and are a member of the
 ``iiasa/GLOBIOM`` GitHub team, or have been given collaborator access.
-
-Top-Level GAMS Scripts
-----------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   Data/0_executebatch_total
-   Model/0_executebatch
-
-Important GAMS Scripts
-----------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   Model/1_loaddata
-   Model/2_activesets
-   Model/3_precompute
-   Model/3b_calibtrade
-   Model/4_model
-   Model/5_precompute_scen
-   Model/6_scenarios_msg
-   Model/6_scenarios_limpopo
-   Model/6_scenarios_msg_limpopo
-   Model/7_output

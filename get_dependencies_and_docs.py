@@ -391,12 +391,12 @@ if __name__ == '__main__':
         ]
         substitute_lines = ['   '+path[:-4] for path in sorted(topLevelScriptPaths)] 
         post_line = ""
-        # Update the index
-        with FileInput(files=["source/index.rst"], inplace=True) as f:
+        # Update the source tree
+        with FileInput(files=["source/source_tree.rst"], inplace=True) as f:
             prior = 0
             post = False
             for line in f:
-                line = line.rstrip('\r\n')
+                line = line.rstrip('\r\n') # strips any repetition of either
                 if post:
                     print(line, end='\n')
                 else:
