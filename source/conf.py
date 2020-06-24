@@ -86,7 +86,6 @@ html_theme = 'sphinx_rtd_theme'
 # html_theme_options = {}
 html_theme_options = {
     'sticky_navigation': True,
-    'include_hidden': True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
