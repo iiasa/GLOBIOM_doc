@@ -70,13 +70,6 @@ for GLOBIOM development with an IIASA-specific focus. The GitHub `issue tracker
 members. These links work if you are signed in to GitHub and are a member of the
 ``iiasa/GLOBIOM`` GitHub team, or have been given collaborator access.
 
-GUI
-^^^
-The `GLOBIOM_GUI repository <https://github.com/iiasa/GLOBIOM_GUI>`_ provides a graphical user
-interface (GUI) for running GLOBIOM and analyzing results. Installation instructions are found
-`here <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_.
-See the :doc:`GUI` to learn how to use the GUI.
-
 Top-Level GAMS Scripts
 ----------------------
 
