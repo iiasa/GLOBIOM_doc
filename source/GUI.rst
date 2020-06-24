@@ -1,7 +1,9 @@
-GLOBIOM GUI Overview
-====================
+Graphical User Interface
+========================
+The `GLOBIOM_GUI repository <https://github.com/iiasa/GLOBIOM_GUI>`_ provides a graphical user
+interface (GUI) for running GLOBIOM and analyzing results. Installation instructions are found
+`here <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_.
 
-This page gives an overview of the GLOBIOM Graphical User Interface (GUI).
 The GUI provides a user-friendly way to run GLOBIOM and perform interactive
 analysis of the model output. One or more output GDX files resulting from
 GLOBIOM scenario runs can be loaded for charting, mapping, tabulation and
@@ -13,9 +15,8 @@ before, or perform analysis using R or some other tool of choice.
 
 Post installation
 -----------------
-
-After `installation via GitHub <index.html#globiom-resources>`_, the GUI
-window should open when running the ``globiom.bat`` script located in the
+After `installation via GitHub <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_,
+the GUI window should open when running the ``globiom.bat`` script located in the
 ``GUI`` directory. If this fails, run the script from the command prompt or
 terminal so that you can read the error message, check whether you have
 configured a valid path in ``GGIG_java_path.txt``.
@@ -44,7 +45,6 @@ Adjust the following settings in particular:
 
 Managing the GUI settings
 -------------------------
-
 The GUI stores its settings in the ``settings.ini`` file in the ``GUI``
 directory. This ``.ini`` file contains the settings you enter via the
 configuration dialog, but also per-task or per-analysis-view window state.
@@ -75,7 +75,6 @@ the following quick fix:
 
 Further reading
 ---------------
-
 For an overview, see the `A GUI for GLOBIOM <presentations/A_GUI_for_GLOBIOM.pdf>`_
 presentation.
 
@@ -86,7 +85,6 @@ Guide** menu item.
 
 Acknowledgments
 ----------------
-
 The GLOBIOM GUI is based on `GGIG <http://www.ilr.uni-bonn.de/em/rsrch/ggig/ggig_e.htm>`_,
 the Gams Graphical Interface Generator. We are grateful for the generous
 guidance and assistance concerning GGIG provided by Wolfgang Britz and
