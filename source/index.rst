@@ -52,17 +52,14 @@ The `model documentation <https://iiasa.github.io/GLOBIOM/GLOBIOM_Documentation_
 provides a detailed description of the main features of the GLOBIOM model, as present in the
 standard global version.
 
-GLOBIOM resources
------------------
-
 Model code
-^^^^^^^^^^
+----------
 An Open Source version of GLOBIOM is under preparation. External collaborators are given access
 to an open-source pre-release version of GLOBIOM hosted on GitHub in `this repository
 <https://github.com/iiasa/GLOBIOM_Prerelease_Model>`_.
 
 Development
-^^^^^^^^^^^
+-----------
 The `GLOBIOM wiki <https://github.com/iiasa/GLOBIOM/wiki>`_ provides background and guidelines
 for GLOBIOM development with an IIASA-specific focus. The GitHub `issue tracker
 <https://github.com/iiasa/GLOBIOM/issues>`_ and `project boards
