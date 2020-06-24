@@ -1,7 +1,7 @@
 Using R with GLOBIOM
 ====================
 In addition to using `GAMS <https://www.gams.com/>`_, GLOBIOM includes scripts written in the open-source
-`R language <https://en.wikipedia.org/wiki/R_(programming_language)>`_. In addition separate
+`R language <https://en.wikipedia.org/wiki/R_(programming_language)>`_. Also, separate
 `GLOBIOM-specific R packages`_ provide data handling scripts and examples. Therefore, to use all features
 of GLOBIOM, you need to have R installed.
 
