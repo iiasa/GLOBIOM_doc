@@ -8,8 +8,8 @@ of GLOBIOM, you need to have R installed.
 Installing R and required packages
 ----------------------------------
 R can be installed via the `R Project website <https://www.r-project.org/>`_. If you find
-yourself using R a lot, the `R Studio integrated development environment <https://www.rstudio.com/>`_
-is highly recommended.
+yourself using R a lot, the `RStudio <https://www.rstudio.com/>`_ integrated development
+environment is highly recommended.
 
 The R scripts included with GLOBIOM require additional R packages. These can be installed from the
 R console using ``install.packages("package")``. R Studio provides a convenient package manager that
