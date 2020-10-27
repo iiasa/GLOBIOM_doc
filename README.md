@@ -1,2 +1,2 @@
 # GLOBIOM_doc
-Scripts and templates for GLOBIOM documentation generation
+Scripts and templates for GLOBIOM documentation generation. The `FABLE` branch provides ReST page templates and serves to generate pages from the GLOBIOM_FABLE GAM source files. The generated HTML is committed to the `gh-pages` branch of the [GLOBIOM_FABLE](https://github.com/iiasa/GLOBIOM_FABLE) repository. That `gh-pages` branch stores the content of the [GLOBIOM FABLE](https://iiasa.github.io/GLOBIOM_FABLE) documentation site.
