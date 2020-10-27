@@ -8,7 +8,7 @@ Experiments for parsing reference files.
 Load the tidyverse and set the reference file name.
 
 ```{r}
-library(tidyverse, quietly = TRUE)
+suppressMessages(library(tidyverse))
 ref <- "combined.ref"
 ```
 
