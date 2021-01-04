@@ -53,6 +53,9 @@ entry with the directory where Rscript is located. This is typically something l
 Determine the right location with the File Explorer, and make sure to pick the ``x64`` subdirectory holding the
 64-bit executables if you have a 64-bit Windows installation.
 
+**Beware:** applications that are already running when you change environment variables will not see the changes
+and have to be restarted for the changes to take effect.
+
 Linux and MacOS
 ^^^^^^^^^^^^^^^
 Assuming bash is your default shell, you can set an environment variable with the ``export`` command.
@@ -62,7 +65,7 @@ script. For MacOS, use the former. For Linux the preferred script depends on you
 For example, to add the GAMS system directory to the search path on Linux use:
     ``export PATH="/opt/gams/gams:$PATH"``
 
-Since profile scripts execute on starting a session, you need to log out and back in for your edits to be
+**Note:** since profile scripts execute on starting a session, you need to log out and back in for your edits to be
 picked up.
 
 GLOBIOM-specific R packages
