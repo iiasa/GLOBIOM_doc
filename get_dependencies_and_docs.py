@@ -377,7 +377,7 @@ if __name__ == '__main__':
         # Delete any previously-generated subdirectories of the source directory
         for dirpath, dirs, files in os.walk('source'):
             for d in dirs:
-                if d not in  ['_static', '_templates', 'images']:
+                if d not in  ['_static', '_templates', '_images']:
                     shutil.rmtree(os.path.join(dirpath, d))
         # Generate the index
         print("----------------------- Generating reStructuredText index")
