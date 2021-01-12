@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""Recursively determine the execute and $include dependencies as of a
-whitelist of manually executed GAMS scripts. Report any problems encountered
+"""Recursively determine the execute and $include dependencies as of
+a whitelist of top-level GAMS scripts. Report any problems encountered
 and, for each GAMS script in this dependency tree, generate a reStructuredText
 file containing dependency links as well as any ***-delimited reStructuredText
 doc-comments in the script. The reStructuredText text files can subsequently be
@@ -49,8 +49,8 @@ ROOT = '..' # directory containing GLOBIOM branch/tag/trunk
 if not os.path.exists(ROOT):
     raise RuntimeError(f"Root directory at '{ROOT}' does not exist")
 
-# Whitelist of manually executed scripts
-MANUALLY_EXECUTED_SCRIPTS = [
+# Top-level GAMS scripts
+TOP_LEVEL_SCRIPTS = [
     "Data/0_executebatch_total.gms",
     "Model/0_executebatch.gms",
 ]
@@ -279,18 +279,18 @@ if __name__ == '__main__':
                 # Found a GAMS file
                 gams_rel_file_path = os.path.relpath(os.path.join(dirpath, file), start=ROOT).replace('\\', '/')
                 gams_paths_dict[gams_rel_file_path] = True
-    # Check whitelisted scripts for existence
+    # Check top-level whitelisted scripts for existence
     bad_whitelist = False
-    for path in MANUALLY_EXECUTED_SCRIPTS:
+    for path in TOP_LEVEL_SCRIPTS:
         if path not in gams_paths_dict:
             bad_whitelist = True
             print(f"NON-EXISTENT: {path}")
     if bad_whitelist:
-        raise RuntimeError("ERROR: non-existent scripts present in MANUALLY_EXECUTED_SCRIPTS whitelist.")
-    # Seed script_paths_dict that will hold the parse tree with the whitelist of manually executed scripts.
-    print("----------------------- Starting from Manually-Executed Script Whitelist")
+        raise RuntimeError("ERROR: non-existent scripts present in TOP_LEVEL_SCRIPTS whitelist.")
+    # Seed script_paths_dict that will hold the parse tree with the whitelist of top-level scripts.
+    print("----------------------- Starting from Top-Level and Important Script Whitelist")
     script_paths_dict = {}
-    for path in MANUALLY_EXECUTED_SCRIPTS:
+    for path in TOP_LEVEL_SCRIPTS:
         cd,dummy = os.path.split(path)
         if path in script_paths_dict:
             raise RuntimeError(f"ERROR: script {path} whitelisted multiple times!")
@@ -314,7 +314,7 @@ if __name__ == '__main__':
             if file_put_path[-4:].lower() == '.gms':
                 gams_put_file_dict[file_put_path] = True
     # List GAMS files not caught in the dependency net
-    print("----------------------- Report GAMS files not $included or executed starting from MANUALLY_EXECUTED_SCRIPTS")
+    print("----------------------- Report GAMS files not $included or executed starting from TOP_LEVEL_SCRIPTS")
     for path in sorted(gams_paths_dict.keys()):
         if path not in script_paths_dict:
             print(path)
@@ -334,7 +334,7 @@ if __name__ == '__main__':
             print(f"    missing file: {missing['path']}")
     # Report white-listed scripts that are not top-level.
     print("----------------------- Report Non-Top-Level Whitelisted Scripts")
-    for path in MANUALLY_EXECUTED_SCRIPTS:
+    for path in TOP_LEVEL_SCRIPTS:
         script_dict = script_paths_dict[path]
         if script_dict['$included_by']:
             print(f"Whitelisted script {path} is $included")
@@ -351,7 +351,7 @@ if __name__ == '__main__':
             topLevelScriptPaths.append(path)
     # Check if all top-level scripts are whitelisted
     for path in topLevelScriptPaths:
-        assert path in MANUALLY_EXECUTED_SCRIPTS
+        assert path in TOP_LEVEL_SCRIPTS
     # Report totals
     print("----------------------- Report Totals")
     # Count unique $include children and parents
@@ -370,7 +370,7 @@ if __name__ == '__main__':
         execute_parents  += len(script_dict['executed_by'])
     print(f"(commented) execute children: {execute_children}, execute parents: {execute_parents}")
     print(f"Source tree holds {len(gams_paths_dict)} GAMS scripts in total.")
-    print(f"Dependency-located {len(script_paths_dict)} GAMS scripts starting from and including MANUALLY_EXECUTED_SCRIPTS.")
+    print(f"Dependency-located {len(script_paths_dict)} GAMS scripts starting from and including TOP_LEVEL_SCRIPTS.")
     # Generate reStructuredText
     if GENERATE_REST:
         print("----------------------- Removing old reStructuredText")
