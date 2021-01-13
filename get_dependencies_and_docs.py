@@ -414,34 +414,27 @@ if __name__ == '__main__':
         substitute_lines = ['   '+path[:-4] for path in sorted(topLevelScriptPaths)] 
         post_line = ""
         # Update the source tree
-        with FileInput(files=["source/source_tree.rst"], inplace=True) as f:
-            prior = 0
-            post = False
-            for line in f:
-                line = line.rstrip('\r\n') # strips any repetition of either
-                if post:
-                    print(line, end='\n')
-                else:
-                    if prior < len(prior_lines):
-                        # Prior lines not matched yet
-                        print(line, end='\n')
-                        if line == prior_lines[prior]:
-                            # Another match in the sequence
-                            prior += 1
-                        else:
-                            # A mismatch, revert back to 0 and match as of start
-                            prior = 0
-                            if line == prior_lines[prior]:
-                                prior += 1
-                    elif line != post_line:
-                        # Forget lines-to-be-substituted, before post line
-                        continue
-                    else:
-                        # Found the post line, output substitution and post line
-                        post = True
-                        for sub in substitute_lines:
-                            print(sub, end='\n')
-                        print(line, end='\n')
+        with open("source/source_tree.rst", 'w', newline='') as st:
+            st.write("Source Tree\n")
+            st.write("===========\n")
+            st.write("\n")
+            st.write("Top-Level GAMS Scripts\n")
+            st.write("----------------------\n")
+            st.write("\n")
+            st.write(".. toctree::\n")
+            st.write("   :maxdepth: 1\n")
+            st.write("\n")
+            for path in TOP_LEVEL_SCRIPTS:
+                st.write("   " + path[:-4] + "\n")
+            st.write("\n")
+            st.write("Important GAMS Scripts\n")
+            st.write("----------------------\n")
+            st.write("\n")
+            st.write(".. toctree::\n")
+            st.write("   :maxdepth: 1\n")
+            st.write("\n")
+            for path in IMPORTANT_SCRIPTS:
+                st.write("   " + path[:-4] + "\n")
         # Generate reStructuredText for every GAMS script caught in the dependency tree
         print("----------------------- Generating reStructuredText for GAMS tree")
         for path,script_dict in script_paths_dict.items():
