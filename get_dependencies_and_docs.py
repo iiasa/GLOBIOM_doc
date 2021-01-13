@@ -55,6 +55,20 @@ TOP_LEVEL_SCRIPTS = [
     "Model/0_executebatch.gms",
 ]
 
+# Important GAMS scripts (will be included even when not under top-level)
+IMPORTANT_SCRIPTS = [
+    "Model/1_loaddata.gms",
+    "Model/2_activesets.gms",
+    "Model/3_precompute.gms",
+    "Model/3b_calibtrade.gms",
+    "Model/4_model.gms",
+    "Model/5_precompute_scen.gms",
+    "Model/6_scenarios_msg.gms",
+    "Model/6_scenarios_limpopo.gms",
+    "Model/6_scenarios_msg_limpopo.gms",
+    "Model/7_output.gms",
+]
+
 rest_pattern                   = re.compile('[*] (.*)$')
 ontext_pattern                 = re.compile('\$ontext\s*$', re.IGNORECASE)
 offtext_pattern                = re.compile('\$offtext\s*$', re.IGNORECASE)
@@ -279,18 +293,26 @@ if __name__ == '__main__':
                 # Found a GAMS file
                 gams_rel_file_path = os.path.relpath(os.path.join(dirpath, file), start=ROOT).replace('\\', '/')
                 gams_paths_dict[gams_rel_file_path] = True
-    # Check top-level whitelisted scripts for existence
-    bad_whitelist = False
+    # Check top-level scripts for existence
+    bad_list = False
     for path in TOP_LEVEL_SCRIPTS:
         if path not in gams_paths_dict:
-            bad_whitelist = True
+            bad_list = True
             print(f"NON-EXISTENT: {path}")
-    if bad_whitelist:
-        raise RuntimeError("ERROR: non-existent scripts present in TOP_LEVEL_SCRIPTS whitelist.")
-    # Seed script_paths_dict that will hold the parse tree with the whitelist of top-level scripts.
+    if bad_list:
+        raise RuntimeError("ERROR: non-existent scripts present in TOP_LEVEL_SCRIPTS list.")
+    # Check important scripts for existence
+    bad_list = False
+    for path in IMPORTANT_SCRIPTS:
+        if path not in gams_paths_dict:
+            bad_list = True
+            print(f"NON-EXISTENT: {path}")
+    if bad_list:
+        raise RuntimeError("ERROR: non-existent scripts present in IMPORTANT_SCRIPTS list.")
+    # Seed script_paths_dict that will hold the parse tree with top-level and important scripts.
     print("----------------------- Starting from Top-Level and Important Script Whitelist")
     script_paths_dict = {}
-    for path in TOP_LEVEL_SCRIPTS:
+    for path in TOP_LEVEL_SCRIPTS + IMPORTANT_SCRIPTS:
         cd,dummy = os.path.split(path)
         if path in script_paths_dict:
             raise RuntimeError(f"ERROR: script {path} whitelisted multiple times!")
@@ -332,16 +354,16 @@ if __name__ == '__main__':
             print(f"ERROR: missing $included GAMS file on line {missing['line_number']} of file {path}:")
             print(f"    {missing['line']}", end='')
             print(f"    missing file: {missing['path']}")
-    # Report white-listed scripts that are not top-level.
-    print("----------------------- Report Non-Top-Level Whitelisted Scripts")
+    # Report top-level-listed scripts that are not top-level.
+    print("----------------------- Report Non-Top-Level Scripts listed as Top-Level")
     for path in TOP_LEVEL_SCRIPTS:
         script_dict = script_paths_dict[path]
         if script_dict['$included_by']:
-            print(f"Whitelisted script {path} is $included")
+            print(f"Top-level script {path} is $included")
             for by_path in script_dict['$included_by']:
                 print(f"    {by_path}")
         if script_dict['executed_by']:
-            print(f"Whitelisted script {path} is executed by:")
+            print(f"Top-level script {path} is executed by:")
             for by_path in script_dict['executed_by']:
                 print(f"    {by_path}")
     # Add-to-list top-level scripts
@@ -349,9 +371,9 @@ if __name__ == '__main__':
     for path,script_dict in script_paths_dict.items():
         if not (script_dict['$included_by'] or script_dict['executed_by']):
             topLevelScriptPaths.append(path)
-    # Check if all top-level scripts are whitelisted
+    # Check if all top-level scripts are listed
     for path in topLevelScriptPaths:
-        assert path in TOP_LEVEL_SCRIPTS
+        assert path in TOP_LEVEL_SCRIPTS + IMPORTANT_SCRIPTS
     # Report totals
     print("----------------------- Report Totals")
     # Count unique $include children and parents
