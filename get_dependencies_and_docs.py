@@ -63,9 +63,7 @@ IMPORTANT_SCRIPTS = [
     "Model/3b_calibtrade.gms",
     "Model/4_model.gms",
     "Model/5_precompute_scen.gms",
-    "Model/6_scenarios_msg.gms",
-    "Model/6_scenarios_limpopo.gms",
-    "Model/6_scenarios_msg_limpopo.gms",
+    "Model/6_scenarios.gms",
     "Model/7_output.gms",
 ]
 
