@@ -46,15 +46,18 @@ The GAMS installation directory can typically be found at:
 Windows 10
 ^^^^^^^^^^
 On Windows 10, you can edit ``PATH`` by searching for "env" in the Start Menu and selecting either **Edit environment
-variables for your account** or, if you have administrator rights, **Edit the system environment variables** and also
-clicking the **Environment Variables...** button in the dialog that opens. Next, select the ``Path`` variable from the
-bottom (System variables) or top (User variables) list, click the **Edit** button, and then click **New** to add an
-entry with the directory where Rscript is located. This is typically something like ``C:\Program Files\R\R-3.6.2\bin\x64``.
-Determine the right location with the File Explorer, and make sure to pick the ``x64`` subdirectory holding the
-64-bit executables if you have a 64-bit Windows installation.
+variables for your account** or, if you have administrator rights or have the administrator password, **Edit the
+system environment variables** and also clicking the **Environment Variables...** button in the dialog that opens.
+Next, select the ``Path`` variable from the bottom (System variables) or top (User variables) list, click the **Edit** 
+utton, and then click **New** to add an entry with the directory where Rscript is located. This is typically something
+like ``C:\Program Files\R\R-4.0.3\bin\x64``. Determine the right location with the File Explorer, and make sure to
+pick the ``x64`` subdirectory holding the 64-bit executables if you have a 64-bit Windows installation.
 
 **Beware:** applications that are already running when you change environment variables will not see the changes
 and have to be restarted for the changes to take effect.
+
+**Beware:** if you edit the user variables (the top list) after having authenticated with the administrator password,
+they will apply to the administrator user account, not to your regular user account.
 
 Linux and MacOS
 ^^^^^^^^^^^^^^^
