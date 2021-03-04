@@ -18,9 +18,13 @@ makes installing/removing packages even easier.
 Instead of installing individual packages, we recommend to simply install the `tidyverse <https://www.tidyverse.org/>`_
 package collection.
 
-The one required package that needs special treatment is GDXRRW, a package to read/write GDX files from R. Please
-see the `GDXRRW installation instructions <https://support.gams.com/gdxrrw:interfacing_gams_and_r>`_ for details.
-**Beware**, on Windows installing the source package will not work unless you have a compiler installed, install
+The one required package that needs special treatment is **gdxrrw**, a package to read/write GDX files from R. Please
+see the `**gdxrrw** installation instructions <https://support.gams.com/gdxrrw:interfacing_gams_and_r>`_ for details.
+
+**Beware:** recent versions of **gdxrrw** only work with recent versions of GAMS. If you are not using an old GAMS
+and the package will install but won't work, try to downgrade to an earlier package version.
+
+**Beware:** on Windows installing the source package will not work unless you have a compiler installed, install
 a binary package instead. Binary packages are provided for specific operating systems and R versions, carefully
 select the appropriate package for download.
 
