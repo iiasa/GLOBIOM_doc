@@ -21,7 +21,7 @@ package collection.
 The one required package that needs special treatment is **gdxrrw**, a package to read/write GDX files from R. Please
 see the `**gdxrrw** installation instructions <https://support.gams.com/gdxrrw:interfacing_gams_and_r>`_ for details.
 
-**Beware:** recent versions of **gdxrrw** only work with recent versions of GAMS. If you are not using an old GAMS
+**Beware:** recent versions of **gdxrrw** only work with recent versions of GAMS. If you are using an old GAMS
 and the package will install but won't work, try to downgrade to an earlier package version.
 
 **Beware:** on Windows installing the source package will not work unless you have a compiler installed, install
