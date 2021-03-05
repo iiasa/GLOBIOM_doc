@@ -58,13 +58,13 @@ GLOBIOM for FABLE is provided via three GitHub repositories:
 * The `GLOBIOM_GUI repository <https://github.com/iiasa/GLOBIOM_GUI>`_ provides a graphical user
   interface (GUI) for running GLOBIOM and analyzing results. Installation instructions are found
   `here <https://github.com/iiasa/GLOBIOM_GUI/blob/master/README.md>`_.
-  See the `GUI <https://iiasa.github.io/GLOBIOM/GUI.html>`_ to learn how to use the GUI.
+  See the `GUI page <https://iiasa.github.io/GLOBIOM/GUI.html>`_ to learn how to use the GUI.
 
 GLOBIOM is implemented primarily in `GAMS <https://www.gams.com/products/introduction/>`_. To run the
 model, you need a GAMS installation with a license that allows use of the CONOPT and CPLEX solvers.
 
 In addition, GLOBIOM includes scripts written in the Open Source R language. To learn how to install
-and configure R for GLOBIOM, see the `R <https://iiasa.github.io/GLOBIOM/R.html>`_ page.
+and configure R for GLOBIOM, see the `R page <https://iiasa.github.io/GLOBIOM/R.html>`_.
 
 Top-Level GAMS Scripts
 ----------------------
