@@ -1,7 +1,7 @@
 GLOBIOM_FABLE
 =============
 
-.. image:: images/logo.png
+.. image:: _images/logo.png
    :width: 154
 
 This website provides FABLE consortium members using GLOBIOM for partial
