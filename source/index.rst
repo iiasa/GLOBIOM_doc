@@ -22,7 +22,6 @@ Commodity markets and international trade are modelled at the level of 37 aggreg
 
 The model was initially developed for impact assessment of climate change mitigation policies in land-based sectors, including biofuels, and nowadays is also increasingly being implemented for agricultural and timber markets foresight, and economic impact analysis of climate change and adaptation, and a wide range of sustainable development goals.
 
-
 The `model documentation <https://iiasa.github.io/GLOBIOM/GLOBIOM_Documentation_20180604.pdf>`_
 provides a detailed description of the main features of the GLOBIOM model, as present in the
 standard global version.
@@ -37,7 +36,7 @@ The model includes six land cover types: cropland, grassland, short rotation pla
 Land conversion possibilities are further restricted through biophysical land suitability and production potentials, and through a matrix of potential land cover transitions. Land expansion in GLOBIOM is described at the level of each spatial unit. Land use change is considered at the local level, on a one to one hectare basis, through a conversion ruled by a matrix of land use conversion possibilities between land use types, and associated conversion costs. The land transition matrix offers the possibility to reflect land conversion patterns specific to a region, and to vary conversion costs depending on the land type to convert. 
 
 Agriculture
-~~~~~~~~~~
+~~~~~~~~~~~
 
 Crop production
 ^^^^^^^^^^^^^^^
