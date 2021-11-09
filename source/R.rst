@@ -15,11 +15,11 @@ The R scripts included with GLOBIOM require additional R packages. These can be 
 R console using ``install.packages("package")``. R Studio provides a convenient package manager that
 makes installing/removing packages even easier.
 
-To install required packages, please follow [this guidance](https://github.com/iiasa/xl2gdx#dependencies).
+To install required packages, please follow `this guidance <https://github.com/iiasa/xl2gdx#dependencies>`_.
 
 Setting environment variables
 -----------------------------
-To set the environment variables decribed in the guidance linked above, it is helpful
+To set the environment variables described in the guidance linked above, it is helpful
 to know that the GAMS installation directory can typically be found at:
 
 * ``C:\GAMS\xy`` on Windows.
