@@ -15,53 +15,30 @@ The R scripts included with GLOBIOM require additional R packages. These can be 
 R console using ``install.packages("package")``. R Studio provides a convenient package manager that
 makes installing/removing packages even easier.
 
-Instead of installing individual packages, we recommend to simply install the `tidyverse <https://www.tidyverse.org/>`_
-package collection.
-
-The one required package that needs special treatment is **gdxrrw**, a package to read/write GDX files from R. Please
-see the `gdxrrw installation instructions <https://support.gams.com/gdxrrw:interfacing_gams_and_r>`_ for details.
-
-**Beware:** recent versions of **gdxrrw** only work with recent versions of GAMS. If you are using an old GAMS
-and the package will install but won't work, try to downgrade to an earlier package version.
-
-**Beware:** on Windows installing the source package will not work unless you have a compiler installed, install
-a binary package instead. Binary packages are provided for specific operating systems and R versions, carefully
-select the appropriate package for download.
+To install required packages, please follow [this guidance](https://github.com/iiasa/xl2gdx#dependencies).
 
 Setting environment variables
 -----------------------------
-To invoke R from GAMS, GLOBIOM relies on the ``Rscript`` command being available. Check that you can
-invoke ``Rscript`` from the command line/shell. If you can, then GAMS too can find ``Rscript``.
-If you cannot, add the directory holding the ``Rscript`` binary/executable of your R installation to
-your ``PATH`` environment variable.
+To set the environment variables decribed in the guidance linked above, it is helpful
+to know that the GAMS installation directory can typically be found at:
 
-GDXRRW needs to load GDX libraries from a GAMS system directory. GLOBIOM makes sure that it can,
-but if you want to use GDXRRW in your own scripts, issue ``help(igdx)`` in the R console and read carefully
-(after having installed and loaded the package). One of the methods described in that help page involves setting
-the ``R_GAMS_SYSDIR`` environment variable and passing an empty string as a first ``gamsSysDir`` parameter to
-``igdx()``.  To learn about setting environment variables, see below.
-
-The GAMS installation directory can typically be found at:
-
-* ``C:\GAMS\win64\xy.z`` on Windows.
+* ``C:\GAMS\xy`` on Windows.
 * ``/opt/gams/gams`` on Linux.
 * ``/Applications/GAMSxy.z`` on MacOS.
 
 Windows 10
 ^^^^^^^^^^
-On Windows 10, you can edit ``PATH`` by searching for "env" in the Start Menu and selecting either **Edit environment
-variables for your account** or, if you have administrator rights or have the administrator password, **Edit the
-system environment variables** and also clicking the **Environment Variables...** button in the dialog that opens.
-Next, select the ``Path`` variable from the bottom (System variables) or top (User variables) list, click the **Edit** 
-utton, and then click **New** to add an entry with the directory where Rscript is located. This is typically something
-like ``C:\Program Files\R\R-4.0.3\bin\x64``. Determine the right location with the File Explorer, and make sure to
-pick the ``x64`` subdirectory holding the 64-bit executables if you have a 64-bit Windows installation.
+On Windows 10, you can type "env" in the search field of the Start Menu and select either
+**Edit environment variables for your account**
+or, if you have administrator rights or have the administrator password,
+**Edit the system environment variables** and also clicking the **Environment Variables...**
+button in the dialog that opens.
 
-**Beware:** applications that are already running when you change environment variables will not see the changes
-and have to be restarted for the changes to take effect.
+**Beware:** applications that are already running when you change environment variables will not see the
+changes and have to be restarted for the changes to take effect.
 
-**Beware:** if you edit the user variables (the top list) after having authenticated with the administrator password,
-they will apply to the administrator user account, not to your regular user account.
+**Beware:** if you edit the user variables (the top list) after having authenticated with the administrator
+password, they will apply to the administrator user account, not to your regular user account.
 
 Linux and MacOS
 ^^^^^^^^^^^^^^^
@@ -72,8 +49,8 @@ script. For MacOS, use the former. For Linux the preferred script depends on you
 For example, to add the GAMS system directory to the search path on Linux use:
     ``export PATH="/opt/gams/gams:$PATH"``
 
-**Note:** since profile scripts execute on starting a session, you need to log out and back in for your edits to be
-picked up.
+**Note:** since profile scripts execute on starting a session, you need to log out and back in for your edits
+to be picked up.
 
 GLOBIOM-specific R packages
 ---------------------------
