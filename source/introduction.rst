@@ -1,4 +1,5 @@
 .. _introduction:
+
 Introduction
 ============
 The `Global Biosphere Management Model <http://www.globiom.org>`_ (GLOBIOM) has been developed and used by the International Institute for Applied Systems Analysis (IIASA) since the late 2000s. The partial-equilibrium model represents main land use sectors, including agriculture and forestry. The supply side of the model is built-up from the bottom (spatially explicit land cover, land use, management systems and economic cost information) to the top (regional commodity markets). This detailed structure allows a rich set of environmental and socio-economic parameters to be taken into account.
