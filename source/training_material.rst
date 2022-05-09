@@ -3,7 +3,7 @@
 GLOBIOM training material
 =========================
 
-This is a select subset of training provided by the GLOBIOM team.
+This page holds the slide decks of a select subset of trainings provided by the GLOBIOM team. More material will be added after curation.
 
 Topics
 ------
