@@ -4,6 +4,7 @@
    index
    introduction
    documentation
+   training_material
    model_code
    development
    GUI
