@@ -53,6 +53,7 @@ if not os.path.exists(ROOT):
 TOP_LEVEL_SCRIPTS = [
     "Data/0_executebatch_total.gms",
     "Model/0_executebatch.gms",
+    "Model/8_merge_output.gms",
 ]
 
 # Important GAMS scripts (will be included even when not under top-level)
