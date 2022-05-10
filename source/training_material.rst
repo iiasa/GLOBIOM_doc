@@ -1,7 +1,7 @@
 .. _training_material:
 
-GLOBIOM training material
-=========================
+Training material
+=================
 
 This page holds the slide decks of a select subset of trainings provided by the GLOBIOM team. More material will be added after curation.
 
