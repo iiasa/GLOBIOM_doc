@@ -97,6 +97,10 @@ html_logo = '_images/logo_white.png'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Do not copy the ReST source and do not show the link to view the page source.
+html_copy_source = False
+html_show_sourcelink = False
+
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
