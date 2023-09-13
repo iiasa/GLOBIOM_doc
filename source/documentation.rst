@@ -69,6 +69,6 @@ The estimated AFOLU mitigation potentials include N2O from the application of sy
 
 Further reading
 ---------------
-The `documentation PDF <https://iiasa.github.io/GLOBIOM/GLOBIOM_Documentation_20180604.pdf>`_
+The `GLOBIOM Documentation PDF <https://pure.iiasa.ac.at/id/eprint/18996/1/GLOBIOM_Documentation.pdf>`_
 provides a detailed description of the main features of the GLOBIOM model, as present in the
 standard global version.
