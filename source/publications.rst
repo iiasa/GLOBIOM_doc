@@ -172,8 +172,8 @@ Change, 45, 227-242.
 
 https://pure.iiasa.ac.at/view/projects/GLOBIOM.html
 
-Selected Publications G4M
--------------------------
+G4M
+---
 
 Gvein, M.H., Hu, X., Næss, J.S., Watanabe, M.D.B., Cavalett, O.,
 Malbranque, M., Kindermann, G. , & Cherubini, F. (2023). Potential of
