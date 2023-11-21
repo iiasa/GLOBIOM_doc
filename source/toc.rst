@@ -4,6 +4,7 @@
    index
    introduction
    documentation
+   publications
    training_material
    model_code
    development
