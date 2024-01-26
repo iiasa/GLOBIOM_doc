@@ -75,4 +75,4 @@ The `GLOBIOM Documentation PDF <https://pure.iiasa.ac.at/id/eprint/18996/1/GLOBI
 provides a detailed description of the main features of the GLOBIOM model, as present in the
 standard global version.
 
-`Documentation for estimating LULUCF emissions / removals and mitigation potentials with GLOBIOM/G4M <GLOBIOM-G4M_documentation_LULUCF_2024.pdf>`_ for the EU27.
+`Documentation for estimating LULUCF emissions / removals and mitigation potentials with GLOBIOM/G4M <documents/GLOBIOM-G4M_documentation_LULUCF_2024.pdf>`_ for the EU27.
