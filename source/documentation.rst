@@ -3,6 +3,8 @@
 Documentation
 =============
 
+*[The following text refers to the standard version of the GLOBIOM model. For more information on the estimation of LULUCF emissions / removals and mitigation potentials with GLOBIOM/G4M for the EU27, please follow the link at the bottom of this page.]*
+
 .. _spatial:
 
 Spatial resolution and land use representation
@@ -72,3 +74,5 @@ Further reading
 The `GLOBIOM Documentation PDF <https://pure.iiasa.ac.at/id/eprint/18996/1/GLOBIOM_Documentation.pdf>`_
 provides a detailed description of the main features of the GLOBIOM model, as present in the
 standard global version.
+
+`Documentation for estimating LULUCF emissions / removals and mitigation potentials with GLOBIOM/G4M <GLOBIOM-G4M_documentation_LULUCF_2024.pdf>`_ for the EU27.
