@@ -7,7 +7,7 @@
    publications
    training_material
    model_code
-   development
    GUI
    R
    source_tree
+   support_and_news
