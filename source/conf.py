@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'GLOBIOM'
-copyright = '2018-2024, IIASA BNR/IBF'
+copyright = '2018-2025, IIASA BNR/IBF'
 author = 'IIASA BNR/IBF'
 
 # The short X.Y version
