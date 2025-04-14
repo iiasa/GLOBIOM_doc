@@ -40,7 +40,7 @@ Zhao, H., Fan, X., Bai, Z. et al. analyze food system innovation to reduce prote
 **DOI:** `10.1038/s43016-024-01011-z  <https://doi.org/10.1038/s43016-024-01011-z>`_
 
 Policy contributions and community engagement
-=============================================
+---------------------------------------------
 
 **Supporting Ambitious EU Climate Goals**
 GLOBIOM-based research played a critical role in informing the European Commission’s recommendation for a 90% reduction in greenhouse gas emissions by 2040.
@@ -67,14 +67,14 @@ The 1st Forest Policy Modelling Forum took place in Brussels, fostering discussi
 | Learn more `<https://www.forestnavigator.eu/forest-policy-modelling-forum/>`_
 
 Recognitions
-============
+------------
 
 **Marta Kozicka** was named `Austria's 2024 National Champion <https://iiasa.ac.at/news/apr-2024/marta-kozicka-is-national-champion-for-austria-in-prestigious-frontiers-planet-prize>`_ in the prestigious Frontiers Planet Prize for her groundbreaking study using GLOBIOM to examine the potential of plant-based dietary transitions to achieve sustainability goals. Her research, conducted with a multidisciplinary team, explored how adopting plant-based meat and milk alternatives can contribute to climate change mitigation and biodiversity conservation.
 
 **Petr Havlík**, leader of the IBF group and BNR program, was recognized as a `2024 Highly Cited Researcher by Clarivate <https://iiasa.ac.at/news/nov-2024/iiasa-researchers-recognized-on-clarivates-2024-highly-cited-researcherstm-list>`_, highlighting his significant contributions to environment, ecology, and social sciences research. Notably, Havlík is among the select group of 216 researchers worldwide honored in two fields this year.
 
 Looking ahead
-=============
+-------------
 
 Updated GLOBIOM Documentation: We are working on an update of the `2023 GLOBIOM documentation <https://pure.iiasa.ac.at/id/eprint/18996/1/GLOBIOM_Documentation.pdf>`_ to reflect recent model developments and applications. This should be finalized in the first half of 2025.
 

@@ -10,6 +10,6 @@ GLOBIOM Newsletters
 -------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    newsletters/2024_highlights
