@@ -78,6 +78,6 @@ Looking ahead
 
 **Updated GLOBIOM Documentation:** We are working on an update of the `2023 GLOBIOM documentation <https://pure.iiasa.ac.at/id/eprint/18996/1/GLOBIOM_Documentation.pdf>`_ to reflect recent model developments and applications. This should be finalized in the first half of 2025.
 
-**LAMASUS Summer School 2025:** Planning is underway for the 2025 edition of the LAMASUS Summer School from 2-6th June, which will offer training on land-use and sustainability modeling. Further details, including dates and application procedures, can be accessed here.
+**LAMASUS Summer School 2025:** Planning is underway for the 2025 edition of the LAMASUS Summer School from 2-6th June, which will offer training on land-use and sustainability modeling. Further details, including dates and application procedures, can be accessed `here <https://www.lamasus.eu/summer-school-2025/>`_.
 
 **YSSP 2025:** In June 2025, the GLOBIOM team will welcome three researchers for a three-month research stay as part of the **Young Scientists Summer Program** (YSSP). The `YSSP program <https://iiasa.ac.at/early-career/yssp>`_ offers PhD students an opportunity to advance their research in an international and interdisciplinary setting at IIASA, working closely with experienced scientists on global sustainability challenges. Applications for the YSSP 2026 cohort will open in fall 2025.
