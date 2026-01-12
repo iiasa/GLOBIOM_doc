@@ -127,7 +127,7 @@ def join_and_normalize(path1, path2):
 def parse_directives(script_paths_dict, path, script_dict, line, line_number):
     """Parse $include, execute, and file/put directives and update the
     dependency tree as encoded in script_paths_dict"""
-    if '$include' in line.lower():
+    if '$include' in line.lower() or '$batinclude' in line.lower():
         # Handle $include directive
         match = quoted_include_path_pattern.match(line)
         if not match:
@@ -139,7 +139,7 @@ def parse_directives(script_paths_dict, path, script_dict, line, line_number):
                     if not match:
                         match = silly_if_include_path_pattern.match(line)
         if not match:
-            if (line[:8].lower() == '$include' or line[:3].lower() == '$if'):
+            if (line[:8].lower() == '$include' or line[:11].lower() == '$batinclude' or line[:3].lower() == '$if'):
                 raise RuntimeError(f"Unmatchable include in {path}: {line}")
             else:
                 # Presumably commented out
