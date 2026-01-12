@@ -54,6 +54,7 @@ TOP_LEVEL_SCRIPTS = [
     "Data/0_executebatch_total.gms",
     "Model/0_executebatch.gms",
     "Model/8_merge_output.gms",
+    "Model/_compile_stages.gms",
 ]
 
 # Important GAMS scripts (will be included even when not under top-level)
@@ -74,7 +75,8 @@ offtext_pattern                = re.compile('\$offtext\s*$', re.IGNORECASE)
 quoted_include_path_pattern    = re.compile('\$(bat)?include\s+"([^"]+)"\s', re.IGNORECASE) # match early
 quoted_if_include_path_pattern = re.compile('\$if\s.*\s\$(bat)?include\s+"([^"]+)"\s', re.IGNORECASE) # match early
 include_path_pattern           = re.compile('\$(bat)?include\s+(\S+)\s', re.IGNORECASE)
-if_include_path_pattern        = re.compile('\$if\s.*\s\$(bat)?include\s+(\S+)\s', re.IGNORECASE)
+if_include_path_pattern        = re.compile('\$if\s.*\s\$(bat)?include\s+(\S+)\s*$', re.IGNORECASE)
+silly_if_include_path_pattern  = re.compile('\$if\s.*\s\$(bat)?include\s+(\S+)\s+!!', re.IGNORECASE)
 execute_gams_pattern           = re.compile("""(\*)?\s*execute(\.async)?\s+["']gams\s+(\S+)(\s.*)""", re.IGNORECASE)
 execute_abort_pattern          = re.compile("""(\*)?\s*execute_(abort)\(\s*["']gams\s+(\S+)(\s.*)""", re.IGNORECASE)
 cdir_pattern                   = re.compile('\s+cdir=(\S+)[\s"]', re.IGNORECASE)
@@ -134,6 +136,8 @@ def parse_directives(script_paths_dict, path, script_dict, line, line_number):
                 match = include_path_pattern.match(line)
                 if not match:
                     match = if_include_path_pattern.match(line)
+                    if not match:
+                        match = silly_if_include_path_pattern.match(line)
         if not match:
             if (line[:8].lower() == '$include' or line[:3].lower() == '$if'):
                 raise RuntimeError(f"Unmatchable include in {path}: {line}")
