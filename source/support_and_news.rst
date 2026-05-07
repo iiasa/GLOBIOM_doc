@@ -13,3 +13,4 @@ GLOBIOM Newsletters
    :maxdepth: 1
 
    newsletters/2024_highlights
+   newsletters/2025_highlights
