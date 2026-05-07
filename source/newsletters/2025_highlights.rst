@@ -14,105 +14,47 @@ The GLOBIOM Community Coordination Team
 Research highlights
 -------------------
 
-`The EAT–Lancet Commission on healthy, sustainable, and just food systems
-<https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01201-2/fulltext>`__\
-Rockström et al., (The Lancet, 2025).\
-Led by Marta Kozicka, GLOBIOM team contributed the new 2025 EAT-*Lancet*
-Commission on healthy, sustainable, and just food systems. The
-Commission presents new evidence-based insights on nutrition and human
-health, within safe and just planetary boundaries. New to this
-Commission are updates to the planetary health diet, measurement and
-assessment of the impact food systems have in driving transgressions of
-planetary boundaries, an exploration of multi-dimensional and underlying
-issues of food justice, new research and extensive modelling insights,
-and transformative and action-based recommendations and roadmaps. The
-study received strong visibility, ranking among the most talked-about
-climate-related papers (#5) in `Carbon Brief’s 2025
-list <https://iiasa.ac.at/news/feb-2026/iiasa-researchers-among-authors-of-climate-papers-most-featured-in-media-in-2025>`__.
+| **The EAT–Lancet Commission on healthy, sustainable, and just food systems**
+| Rockström, J., Thilsted, S. H., Willett, W. C., et al. (The Lancet, 2025)
+| Led by Marta Kozicka, GLOBIOM team contributed the new 2025 EAT-*Lancet* Commission on healthy, sustainable, and just food systems. The Commission presents new evidence-based insights on nutrition and human health, within safe and just planetary boundaries. New to this Commission are updates to the planetary health diet, measurement and assessment of the impact food systems have in driving transgressions of planetary boundaries, an exploration of multi-dimensional and underlying issues of food justice, new research and extensive modelling insights, and transformative and action-based recommendations and roadmaps. The study received strong visibility, ranking among the most talked-about climate-related papers (#5) in `Carbon Brief’s 2025 list <https://iiasa.ac.at/news/feb-2026/iiasa-researchers-among-authors-of-climate-papers-most-featured-in-media-in-2025>`__.
+| **DOI:** `10.1016/S0140-6736(25)01201-2 <https://doi.org/10.1016/S0140-6736(25)01201-2>`_
 
-**Link:** `https://doi.org/10.1016/S0140-6736(25)01201-2`
+| **Bundling measures for food systems transformation: a global, multimodel assessment**
+| Sundiang, M., Diniz Oliveira, T., Mason-D’Croz, D., et al. (The Lancet Planetary Health, 2025)
+| GLOBIOM contributed to this multi-model analysis to explore how coordinated sets of policy measures can unlock transformational pathways for food systems that balance health, sustainability, and equity. This work demonstrates that integrated bundles of food system policies can achieve more systemic change than isolated measures.
+| **DOI:** `10.1016/j.lanplh.2025.101339 <https://doi.org/10.1016/j.lanplh.2025.101339>`_
 
-`Bundling measures for food systems transformation: a global, multi-model assessment <https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(25)00217-7/fulltext>`__\
-Sundiang et al., The Lancet Planetary Health, 2025.\
-GLOBIOM contributed to this multi-model analysis to explore how
-coordinated sets of policy measures can unlock transformational pathways
-for food systems that balance health, sustainability, and equity. This
-work demonstrates that integrated bundles of food system policies can
-achieve more systemic change than isolated measures.
+| **Feeding The Planet While Saving It: How New Foods Can Help!**
+| Kozicka, M., Leclère, D., Davis, C., et al. (Frontiers for Young Minds, 2025)
+| Last year’s research by Kozicka et al. was invited to be adapted for publication in Frontiers for Young Minds, an open-access scientific journal that brings research directly to young readers aged 8–15. The article translates findings on sustainable diets and innovative food alternatives into an accessible format for school students, helping to communicate how food system transformation can contribute to climate mitigation and biodiversity protection.
+| **DOI:** `10.3389/frym.2025.1558710 <https://doi.org/10.3389/frym.2025.1558710>`_
 
-**Link:** https://doi.org/10.1016/j.lanplh.2025.101339
+| **Complexity and uncertainty in future food system transformation modelling**
+| Moallemi, E. A., Castonguay, A. C., Mason-D’Croz, D., et al. (Nature Food, 2025)
+| The GLOBIOM-Australia team led a review article in Nature Food. The article provides an original synthesis that uncovers a fundamental mismatch between the complexity of food-system transitions and the simplifying assumptions of current models. By exposing these structural limitations, the study explains why many existing economic models often fail to produce policy-relevant scenarios for sustainable transformation.
+| **DOI:** `10.1038/s43016-025-01257-1 <https://doi.org/10.1038/s43016-025-01257-1>`_
 
-`Feeding The Planet While Saving It: How New Foods Can Help! <https://www.frontiersin.org/journals/frontiers-for-young-minds/articles/10.3389/frym.2025.1558710/pdf>`__\
-Kozicka et al. (Frontiers for Young Minds, 2025).\
-Last year’s research by Kozicka et al. was invited to be adapted for
-publication in Frontiers for Young Minds, an open-access scientific
-journal that brings research directly to young readers aged 8–15. The
-article translates findings on sustainable diets and innovative food
-alternatives into an accessible format for school students, helping to
-communicate how food system transformation can contribute to climate
-mitigation and biodiversity protection.
+| **Adapting forest management to climate change impacts and policy targets in the EU: Insights from the coupled GLOBIOM/G4M-i3PGmiX model**
+| Augustynczik, A. L. D., Gusti, M., Deppermann, A., et al. (One Earth, 2025)
+| This study applies the coupled GLOBIOM/G4M-i3PGmiX framework to assess how forest management in the EU must adapt to meet climate mitigation, biodiversity, and bioeconomy targets under changing climatic conditions. Results indicate that climate policy will shape management decisions until mid-century, while climate impacts increasingly drive regional shifts in productivity and harvest patterns thereafter, highlighting the need for adaptive strategies to balance carbon sequestration, biomass supply, and ecosystem resilience.
+| **DOI:** `10.1016/j.oneear.2025.03.003 <https://doi.org/10.1016/j.oneear.2025.03.003>`_
 
-`Models of Future Food Systems Should Address Transformation Complexity and Uncertainty <https://www.nature.com/articles/s43016-025-01257-1>`__\
-Moallemi et al. (Nature Food, 2025)\
-The GLOBIOM-Australia team led a review article in Nature Food. The
-article provides an original synthesis that uncovers a fundamental
-mismatch between the complexity of food-system transitions and the
-simplifying assumptions of current models. By exposing these structural
-limitations, the study explains why many existing economic models often
-fail to produce policy-relevant scenarios for sustainable
-transformation.
 
-**DOI:** https://doi.org/10.1038/s43016-025-01257-1
+| **Global carbon storage in harvested wood products: a forest sector model inter-comparison**
+| Fuller, M., Baker, J., Daigneault, A., et al. (Environmental Research Letters, 2025)
+| Assesses the role of harvested wood products (HWPs) in climate mitigation using a multi-model comparison of global forest sector models across different socioeconomic and policy scenarios. The results highlight key trade-offs between carbon storage in forests, wood products, and bioenergy systems, showing that policy ambition and carbon capture technologies strongly influence the contribution of forests and wood-based products to long-term carbon sequestration.
+| **DOI:** `10.1088/1748-9326/ae0ce0 <https://doi.org/10.1088/1748-9326/ae0ce0>`_
 
-`Adapting forest management to climate change impacts and policy targets in the EU: Insights from the coupled GLOBIOM/G4M-i3PGmiX model <https://www.sciencedirect.com/science/article/pii/S2590332225001393>`__\
-Lessa Derci Augustynczik et al. (One Earth, 2025)\
-This study applies the coupled GLOBIOM/G4M-i3PGmiX framework to assess
-how forest management in the EU must adapt to meet climate mitigation,
-biodiversity, and bioeconomy targets under changing climatic conditions.
-Results indicate that climate policy will shape management decisions
-until mid-century, while climate impacts increasingly drive regional
-shifts in productivity and harvest patterns thereafter, highlighting the
-need for adaptive strategies to balance carbon sequestration, biomass
-supply, and ecosystem resilience.
+| **Global forest carbon leakage and substitution effect potentials: The case of the Swedish forest sector**
+| Schulte, M., Lauri, P., Di Fulvio, F., et al. (Journal of Environmental Management, 2025)
+| Examines the global climate impacts of changes in forest harvesting, accounting for market-mediated leakage and substitution effects using a global modelling framework. The results show that reduced harvesting can deliver net climate benefits despite leakage, while increased harvest levels may lead to higher global emissions, highlighting the importance of coordinated forest and climate policies.
+| **DOI:** `10.1016/j.jenvman.2025.127193 <https://doi.org/10.1016/j.jenvman.2025.127193>`_
 
-`Global carbon storage in harvested wood products: a forest sector model inter-comparison <https://iopscience.iop.org/article/10.1088/1748-9326/ae0ce0>`__\
-Fuller, M., Baker, J., Daigneault, A. et al. (Environmental Research Letters, 2025)`
-Assesses the role of
-harvested wood products (HWPs) in climate mitigation using a multi-model
-comparison of global forest sector models across different socioeconomic
-and policy scenarios. The results highlight key trade-offs between
-carbon storage in forests, wood products, and bioenergy systems, showing
-that policy ambition and carbon capture technologies strongly influence
-the contribution of forests and wood-based products to long-term carbon
-sequestration.
+| **Impact of the EU biodiversity strategy for 2030 on the EU wood-based bioeconomy**
+| Di Fulvio, F., Snäll, T., Lauri, P., et al. (Global Environmental Change, 2025)
+| Assesses how climate risks and adaptation responses influence economic and environmental outcomes across sectors using an integrated modelling framework. The study highlights how adaptation strategies can reduce damages but also introduce trade-offs across regions and sectors, emphasizing the importance of coordinated policies to manage climate risks under different socioeconomic pathways.
+| **DOI:** `10.1016/j.gloenvcha.2025.105023 <https://doi.org/10.1016/j.gloenvcha.2025.105023>`_
 
-**DOI:** 10.1088/1748-9326/ae0ce0
-
-`Global forest carbon leakage and substitution effect potentials: The
-case of the Swedish forest
-sector <https://www.sciencedirect.com/science/article/pii/S030147972503169X>`__
-
-Schulte, I., Lauri, P., Di Fulvio, F. et al. assess the global climate
-impacts of changes in forest harvesting, accounting for market-mediated
-leakage and substitution effects using a global modelling framework. The
-results show that reduced harvesting can deliver net climate benefits
-despite leakage, while increased harvest levels may lead to higher
-global emissions, highlighting the importance of coordinated forest and
-climate policies. Published in *Journal of Environmental Management*.
-
-**DOI**: doi.org/10.1016/j.jenvman.2025.127193
-
-`Impact of the EU biodiversity strategy for 2030 on the EU wood-based
-bioeconomy <https://www.sciencedirect.com/science/article/pii/S0959378025000238>`__
-
-Di Fulvio, F., Snäll, T., Lauri, P. assess how climate risks and
-adaptation responses influence economic and environmental outcomes
-across sectors using an integrated modelling framework. The study
-highlights how adaptation strategies can reduce damages but also
-introduce trade-offs across regions and sectors, emphasizing the
-importance of coordinated policies to manage climate risks under
-different socioeconomic pathways. Published in *Global Environmental
-Change*.
 
 Policy contributions and community engagement
 ---------------------------------------------
