@@ -12,18 +12,18 @@ To set up a Python virtual environment with the required dependencies for buildi
 2. Create a virtual environment:
 
    ```bash
-   python -m venv venv
+   python -m venv .venv
    ```
 
 3. Activate the virtual environment:
 
    - On Linux/Mac:
      ```bash
-     source venv/bin/activate
+     source .venv/bin/activate
      ```
    - On Windows:
      ```bash
-     venv\Scripts\activate
+     .venv\Scripts\activate
      ```
 
 4. Install the dependencies:
