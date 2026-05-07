@@ -1,4 +1,18 @@
-**GLOBIOM IIASA Newsletter – 2025 Highlights**
+GLOBIOM IIASA Newsletter — 2025 Highlights 
+==========================================
+
+Dear GLOBIOM Community,
+
+We are pleased to share the latest edition of the GLOBIOM newsletter, bringing together recent highlights from the IIASA team and the wider community. This update provides a concise overview of key research outputs, policy contributions, upcoming activities, and opportunities for engagement.
+
+Looking back at 2025, it has been a year of continued progress, with important advances in research, contributions to policy discussions, and recognition of achievements across the community. The sections below summarise some of the most notable developments.
+
+
+Best regards,
+The GLOBIOM Community Coordination Team
+
+Research highlights
+-------------------
 
 `The EAT–Lancet Commission on healthy, sustainable, and just food systems
 <https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01201-2/fulltext>`__\
@@ -100,7 +114,8 @@ importance of coordinated policies to manage climate risks under
 different socioeconomic pathways. Published in *Global Environmental
 Change*.
 
-**Policy contributions and community engagement**
+Policy contributions and community engagement
+---------------------------------------------
 
 `AGLINK-OECD Agricultural Outlook
 2025 <https://www.oecd.org/en/publications/2025/07/oecd-fao-agricultural-outlook-2025-2034_3eb15914.html>`__
@@ -162,7 +177,8 @@ and climate domains. The lecture combined conceptual explanations with
 practical examples and discussion, allowing participants to explore how
 models such as GLOBIOM contribute to evidence-based decision-making.
 
-**The Horizon Europe project NatuRISE has been successfully funded.**
+The Horizon Europe project NatuRISE has been successfully funded
+----------------------------------------------------------------
 
 The project is coordinated by Esther Boere, a long-term team member and
 now close collaborator at Vrije Universiteit Amsterdam. It will, among
@@ -171,7 +187,8 @@ socio-economic and environmental impacts of nature restoration and
 contribute to evidence-based implementation of restoration policies
 across Europe.
 
-**GAMS training hosted at IIASA for GLOBIOM modelers**
+GAMS training hosted at IIASA for GLOBIOM modelers
+--------------------------------------------------
 
 In 2025, the GLOBIOM team hosted a one-day on-site GAMS training
 delivered by experts from the GAMS company. The workshop focused on good
@@ -181,7 +198,8 @@ infeasibilities, and making effective use of the broader GAMS ecosystem
 guidance with hands-on exercises and provided an opportunity for
 discussion on everyday modelling challenges.
 
-**Recognitions**
+Recognitions
+------------
 
 Our research group leader and Program Director **Petr Havlík** was
 awarded an `honorary doctorate (Doctor Honoris Causa) by KU
@@ -193,7 +211,8 @@ Highly Cited
 Researcher <https://iiasa.ac.at/news/nov-2025/iiasa-researchers-again-recognized-among-worlds-most-highly-cited>`__
 by Clarivate.
 
-**Looking ahead**
+Looking ahead
+-------------
 
 `Summer School
 2026 <https://iiasa.ac.at/capacity-development/summer-schools>`__
